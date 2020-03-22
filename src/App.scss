@@ -193,6 +193,7 @@ main {
           letter-spacing: -.07em;
         }
         .timeslotOne, .timeslotTwo, .timeslotThree {
+          display: none;
           opacity: 0;
           font-size: 0.835em;
           position: absolute;
@@ -213,6 +214,7 @@ main {
         border-image: linear-gradient(45deg, $footerblue 0%, $headingblue);
         border-image-slice: 1;
         .timeslotOne, .timeslotTwo, .timeslotThree {
+          display: block;
           opacity: 1;
           transition: 0.25s ease-in;
           &:hover {
