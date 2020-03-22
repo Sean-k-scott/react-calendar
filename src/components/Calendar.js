@@ -115,7 +115,7 @@ class Calendar extends React.Component {
   renderSelected() {
     return (
       <div className="calendar__selected">
-        <span className="calendar__selected__date">Timeslot One: ß{this.state.dateOne}</span>
+        <span className="calendar__selected__date">Timeslot One: {this.state.dateOne}</span>
         <span className="calendar__selected__date">Timeslot Two: {this.state.dateTwo}</span>
         <span className="calendar__selected__date">Timeslot Three: {this.state.dateThree}</span>
       </div>
