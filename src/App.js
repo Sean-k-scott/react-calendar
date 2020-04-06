@@ -8,10 +8,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <div id="logo">
-            <span>
-              Pinnacle <b>Coaching</b>
-            </span>
+          <div id="title">
+            <h1>
+              Pinnacle Coaching
+            </h1>
           </div>
         </header>
         <main>

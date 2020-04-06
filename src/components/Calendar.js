@@ -52,7 +52,7 @@ class Calendar extends React.Component {
     return <div className="days row">{days}</div>;
   }
 
-  renderCells() {
+  renderDates() {
 
     const { currentMonth, selectedDate } = this.state;
     const monthStart = dateFns.startOfMonth(currentMonth);
@@ -115,11 +115,38 @@ class Calendar extends React.Component {
   renderSelected() {
     return (
       <div className="calendar__selected">
-        <span className="calendar__selected__date">Timeslot One: {this.state.dateOne}</span>
-        <span className="calendar__selected__date">Timeslot Two: {this.state.dateTwo}</span>
-        <span className="calendar__selected__date">Timeslot Three: {this.state.dateThree}</span>
+        <div className="calendar__selected__wrapper">
+          <span className="calendar__selected__date">Timeslot One: {this.state.dateOne}</span><button className="clear-button" onClick={this.clearClickOne}>Clear Choice</button>
+        </div>
+        <div className="calendar__selected__wrapper">
+          <span className="calendar__selected__date">Timeslot Two: {this.state.dateTwo}</span><button className="clear-button" onClick={this.clearClickTwo}>Clear Choice</button>
+        </div>
+        <div className="calendar__selected__wrapper">
+          <span className="calendar__selected__date">Timeslot Three: {this.state.dateThree}</span><button className="clear-button" onClick={this.clearClickThree}>Clear Choice</button>
+        </div>
       </div>
     )
+  }
+
+  clearClickOne = () => {
+    this.setState({
+      selectedOne: false,
+      dateOne: ""
+    });
+  }
+
+  clearClickTwo = () => {
+    this.setState({
+      selectedTwo: false,
+      dateTwo: ""
+    });
+  }
+
+  clearClickThree = () => {
+    this.setState({
+      selectedThree: false,
+      dateThree: ""
+    });
   }
 
   handleClick = () => {
@@ -185,7 +212,7 @@ class Calendar extends React.Component {
         <div className="calendar__object">
           {this.renderHeader()}
           {this.renderDays()}
-          {this.renderCells()}
+          {this.renderDates()}
         </div>
           {this.renderSelected()}
       </div>
